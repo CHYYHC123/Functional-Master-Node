@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET home page. */
+router.get('/', function (req, res, next) {
+  res.send({ age: 14 });
+});
+
 router.get('/test', function (req, res, next) {
-  let obj = {
-    name: 'chy',
-    age: 18
-  };
-  res.send(obj);
+  res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
